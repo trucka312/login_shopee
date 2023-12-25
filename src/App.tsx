@@ -1,6 +1,5 @@
 import { Fragment } from 'react'
 
-import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import CheckPublicRoutes from './routes/checkPublicRoute'
 import DefaultLayout from './layouts/DefaultLayouts'
