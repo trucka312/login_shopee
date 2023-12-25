@@ -1,0 +1,7 @@
+@use "sass:math";
+
+@mixin mq_min_1366 {
+    @media screen and (min-width: 1366px) {
+        @content;
+    }
+}
