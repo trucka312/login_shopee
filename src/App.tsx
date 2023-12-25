@@ -1,33 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Fragment } from 'react'
+
 import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import CheckPublicRoutes from './routes/checkPublicRoute'
+import DefaultLayout from './layouts/DefaultLayouts'
+import { publicRoutes } from './routes/routes'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const publicRoute = publicRoutes.map((route: any) => {
+    const Page = route.component
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let Layout: any = DefaultLayout
 
+    if (route.layout) {
+      Layout = route.layout
+    } else if (route.layout === undefined) {
+      Layout = Fragment
+    }
+
+    return (
+      <Route
+        key={route.path}
+        path={route.path}
+        element={
+          <Layout>
+            <Page />
+          </Layout>
+        }
+      />
+    )
+  })
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Routes>
+        <Route element={<CheckPublicRoutes />}>{publicRoute}</Route>
+        {/* <Route element={<ProtectedRoutes />}>{userRoute}</Route> */}
+      </Routes>
     </>
   )
 }
