@@ -8,11 +8,13 @@ export const publicRoutes = [
   {
     path: routesObj.login,
     component: Login,
-    layout: PublicDefaultLayout
+    layout: PublicDefaultLayout,
+    title: 'Đăng nhập'
   },
   {
     path: routesObj.register,
     component: Register,
-    layout: PublicDefaultLayout
+    layout: PublicDefaultLayout,
+    title: 'Đăng ký'
   }
 ]

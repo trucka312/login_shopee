@@ -1,0 +1,104 @@
+$color-primary: rgba(0,0,0,.65);
+$color-secondary: #ee4d2d;
+
+.header-wrapper{
+    padding: 25px 0;
+
+    .logo{
+        display: inline-block;
+        width: 11.875rem;
+        height: 42px;
+        margin-right: -18px;
+        margin-top: -10px;
+    }
+
+    .AVXSTN{
+        fill: $color-secondary;
+    }
+
+    .icon-shopee-logo {
+        width: 100%;
+        height: 100%;
+    }
+
+    .icon-arrow-logo{
+        display: none;
+    }
+
+    .page-title{
+        margin: 0;
+        font-weight: 400;
+        font-size: 1.5rem;
+    }
+    
+    .support{
+        flex: 1;
+        text-align: right;
+        color: $color-secondary;
+        cursor: pointer;
+        font-size: .875rem;
+        margin-right: 15px;
+
+        .icon {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 576px){
+    header {
+        padding: 0 !important;
+    }
+
+    .header-wrapper {
+        padding: 6px 0;
+
+        .logo {
+            width: auto;
+            margin-right: -8px;
+            margin-top: 0;
+            height: auto;
+            margin-bottom: -5px;
+        }
+
+        .support{
+            margin-right: 0;
+
+            .label {
+                display: none;
+            }
+
+            .icon {
+                display: inline-block;
+                
+                * {
+                    color: $color-secondary;
+                }
+            }
+        }
+
+        .icon-shopee-logo{
+            display: none;
+        }
+
+        .icon-arrow-logo{
+            display: inline-block;
+            flex-shrink: 0;
+            height: 1.5625rem;
+            margin: 0 0.9375rem;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            width: 1.5625rem;
+
+            *{
+                color: $color-secondary;
+                fill: $color-secondary;
+            }
+        }
+
+        .page-title {
+            font-size: 1.25rem;
+        }
+    }
+}
