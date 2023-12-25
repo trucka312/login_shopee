@@ -1,5 +1,5 @@
 const Index = () => {
-  return <div>Login</div>
+  return <div className='login-container'>Login</div>
 }
 
 export default Index
