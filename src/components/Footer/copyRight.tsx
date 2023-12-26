@@ -56,9 +56,9 @@ const Copyright = () => {
                 <span className="label">Quốc gia và khu vực: </span>
 
                 <ul className="copyright-links country-items">
-                    {countries.map((country) => {
+                    {countries.map((country, index) => {
                         return (
-                            <li><Link to={country.site}>{country.name}</Link></li>
+                            <li key={index}><Link to={country.site}>{country.name}</Link></li>
                         )
                     })}
                 </ul>

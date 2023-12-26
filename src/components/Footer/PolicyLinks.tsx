@@ -22,9 +22,9 @@ const policyData = [
 const PolicyLinks = () => {
     return (
         <ul className="copyright-links policy-items">
-            {policyData.map((item) => {
+            {policyData.map((item, index) => {
                 return (
-                    <li><Link to={item.links}>{item.title}</Link></li>
+                    <li key={index}><Link to={item.links}>{item.title}</Link></li>
                 )
             })}
         </ul>

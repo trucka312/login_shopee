@@ -2,7 +2,7 @@ $color-primary: rgba(0,0,0,.65);
 $color-secondary: #ee4d2d;
 
 .header-wrapper{
-    padding: 25px 0;
+    padding: 10px 0;
 
     .logo{
         display: inline-block;
@@ -48,21 +48,24 @@ $color-secondary: #ee4d2d;
 @media screen and (max-width: 576px){
     header {
         padding: 0 !important;
+        height: auto !important;
+        line-height: initial !important;
     }
 
     .header-wrapper {
-        padding: 6px 0;
+        padding: 8px 0;
 
         .logo {
             width: auto;
             margin-right: -8px;
             margin-top: 0;
             height: auto;
-            margin-bottom: -5px;
+            margin-bottom: -8px;
+            line-height: initial;
         }
 
         .support{
-            margin-right: 0;
+            margin-right: 25px;
 
             .label {
                 display: none;
