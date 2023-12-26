@@ -2,12 +2,17 @@ import { Button, Form, Input, Flex, Tooltip, Divider } from 'antd'
 import { loginReqBody } from '../../utils/typeForm'
 import { useState } from 'react'
 import qrLogin from '../../assets/images/qrLogin.png'
+import howToScan from '../../assets/images/how-to-scan.png'
+import { useNavigate } from 'react-router-dom'
+import { routesObj } from '../../utils/routes'
 // import images from '../../assets/images'
 // import iconQr from '../../assets/images/qr.svg'
 
 const Index = () => {
+  const navigate = useNavigate()
   const [formLogin] = Form.useForm()
   const [methodLogin, setMethodLogin] = useState<number>(1)
+  const [showHowToScan, setShowHowToScan] = useState(false)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onFinish = (values: any) => {
     console.log('Success:', values)
@@ -24,6 +29,33 @@ const Index = () => {
       }}
     >
       <Flex className='login-container' justify={'flex-end'} align={'center'}>
+        {methodLogin === 2 && showHowToScan ? (
+          <Flex className='content how-to-scan' align={'center'} vertical={true}>
+            <svg
+              fill='none'
+              viewBox='0 0 11 11'
+              className='PqxwIH'
+              onClick={() => {
+                setShowHowToScan(false)
+              }}
+            >
+              <path
+                fill='#757575'
+                stroke='#757575'
+                stroke-width='.5'
+                d='M6.677 6l4.183-4.182a.48.48 0 00-.677-.678L6 5.323 1.817 1.14a.479.479 0 10-.677.678L5.323 6 1.15 10.172a.479.479 0 00.677.677L6 6.677l4.172 4.172a.479.479 0 10.677-.677L6.677 6z'
+              ></path>
+            </svg>
+            <div className='how-to-scan-header'>
+              <span>Làm thế nào để quét mã</span>
+            </div>
+            <img className='img-how-to-scan' src={howToScan}></img>
+            <div>Nhấn vào biểu tượng quét mã trên ứng dụng Shopee để mở trình quét mã QR</div>
+          </Flex>
+        ) : (
+          <></>
+        )}
+
         <Flex className='content' align={'center'} vertical={true}>
           <div className={methodLogin === 1 ? 'content-header' : 'content-header content-header-qr'}>
             <h2>{methodLogin === 1 ? 'Đăng nhập' : 'Đăng nhập với mã QR'}</h2>
@@ -140,18 +172,29 @@ const Index = () => {
               <div className='qr-container'>
                 <img src={qrLogin} alt='' />
                 <h2>Quét mã QR bằng ứng dụng Shopee</h2>
-                <button>Làm thế nào để quét mã</button>
+                <button
+                  onClick={() => {
+                    setShowHowToScan(!showHowToScan)
+                  }}
+                >
+                  Làm thế nào để quét mã
+                </button>
               </div>
             </>
           )}
 
           <div className='signup'>
             <span>Bạn mới biết đến Shopee? </span>
-            <a href=''>Đăng ký</a>
+            <span
+              onClick={() => {
+                navigate(routesObj.register)
+              }}
+            >
+              Đăng ký
+            </span>
           </div>
         </Flex>
       </Flex>
-      )
     </div>
   )
 }

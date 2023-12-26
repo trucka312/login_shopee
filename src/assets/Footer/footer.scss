@@ -1,0 +1,160 @@
+$color-primary: rgba(0,0,0,.65);
+$color-secondary: #ee4d2d;
+
+$container: 1200px;
+
+$screen-mb: 576px;
+
+body, html {
+    color: rgba(0, 0, 0, 0.8);
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
+    line-height: 1.2;
+}
+
+footer,
+a,
+p{
+    color: $color-primary;
+}
+
+a:hover {
+    color: $color-secondary;
+}
+
+.container {
+    max-width: $container;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-wrapper {
+    >* {
+        flex: 1;
+    }
+}
+
+:where(.css-dev-only-do-not-override-gzal6t).ant-list-split .ant-list-header{
+    border-block-end: none;
+}
+
+.list-image{
+    .ant-list-item{
+        background-color: #fff;
+        border-radius: 0.125rem;
+        box-shadow: 0 1px 1px rgba(0,0,0,.2);
+        box-sizing: border-box;
+        height: 1.875rem;
+        margin-bottom: .5rem !important;
+        margin-right: 0.5rem !important;
+        overflow: hidden;
+        padding: 0.25rem !important;
+        width: 3.75rem;
+
+        img{
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    .qrcode{
+        img {
+            box-shadow: 0 1px 1px rgba(0,0,0,.2);
+        }
+    }
+
+    &.list-download-app {
+        .ant-list-item{
+            width: auto;
+        }
+    }
+}
+
+.footer-header{
+    font-size: .75rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    margin-top: 2.5rem;
+}
+
+.item-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+.ant-list-item{
+    font-size: .75rem;
+    margin-bottom: 0.75rem;
+    padding: 0 !important;
+}
+
+.shipping-wrapper {
+    .footer-header {
+        margin-top: 1rem;
+    }
+}
+
+.countries-wrapper{
+    flex: 1;
+    text-align: right;
+}
+
+.copyright-links {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+
+    li {
+        display: inline-block;
+        padding: 0 5px;
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-right-color: rgba(0,0,0,.1);
+
+        &:last-child{
+            border-right: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.countries-wrapper{
+    color: $color-primary;
+
+    .label {
+        color: $color-primary;
+    }
+}
+
+.countries-items{
+    padding: 2.5rem 0;
+}
+
+.policy-items{
+    text-align: center;
+    display: block;
+    padding-top: 2.625rem;
+}
+
+.information {
+    text-align: center;
+    margin-top: 53px;
+    font-size: .75rem;
+    color: rgba(0,0,0,.65);
+
+    p{
+        margin-top: .5rem;
+        margin-bottom: 0;
+        color: rgba(0,0,0,.65);
+    }
+
+    .name{
+        margin-bottom: 25px;
+    }
+}
+
+@media screen and (max-width: 576px){
+    footer {
+        display: none !important;
+    }
+}
