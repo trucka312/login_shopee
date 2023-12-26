@@ -1,7 +1,13 @@
 @use "sass:math";
 
-@mixin mq_min_1366 {
-    @media screen and (min-width: 1366px) {
+@mixin mq_min_576 {
+    @media screen and (min-width: 576px) {
+        @content;
+    }
+}
+
+@mixin mq_min_768 {
+    @media screen and (min-width: 768px) {
         @content;
     }
 }
