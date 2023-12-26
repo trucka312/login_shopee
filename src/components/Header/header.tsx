@@ -1,7 +1,7 @@
 import { Flex } from 'antd';
 import { useLocation, Link } from 'react-router-dom';
 
-import '../../assets/Header/header.scss';
+import '../../assets/styles/Header/header.scss';
 import { publicRoutes } from '../../routes/routes';
 
 import Logo from './logo';

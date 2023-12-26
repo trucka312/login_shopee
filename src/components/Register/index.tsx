@@ -1,13 +1,15 @@
 import { Button, Form, Input, Flex, Divider } from 'antd'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { registerReqBody } from '../../utils/typeForm';
 
 const Register = () => {
   const [form] = Form.useForm();
+  const navigate = useNavigate();
 
   const onFinish = (values: any) => {
     console.log('Received values of form: ', values);
+    return navigate("/registerConfirm", { state: { data: values } });
   };
 
   return (

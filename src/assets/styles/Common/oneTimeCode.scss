@@ -1,0 +1,53 @@
+.otp-group {
+    display: flex;
+    width: 100%;
+    max-width: 360px;
+    column-gap: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.otp-input {
+    width: 100%;
+    height: 60px;
+    border-width: 0 0 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, .3);
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1;
+    background-color: transparent;
+    outline: none;
+}
+
+.confirm-step {
+    text-align: center;
+    line-height: initial;
+    color: rgba(0, 0, 0, .8);
+
+    .confirm-heading {
+        font-size: 23px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, .8);
+        margin-bottom: 20px;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: .5rem;
+    }
+
+    .confirm-again{
+        margin-top: 50px;
+
+        button {
+            color: #0959f3ba !important;
+            border-width: 0 !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
+            padding: 0 3px;
+        }
+    }
+}
