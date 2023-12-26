@@ -2,6 +2,7 @@ import { Button, Form, Input, Flex, Tooltip, Divider } from 'antd'
 import { loginReqBody } from '../../utils/typeForm'
 import { useState } from 'react'
 import qrLogin from '../../assets/images/qrLogin.png'
+import { Link } from 'react-router-dom'
 // import images from '../../assets/images'
 // import iconQr from '../../assets/images/qr.svg'
 
@@ -18,7 +19,7 @@ const Index = () => {
     console.log('Failed:', errorInfo)
   }
   return (
-    <div
+    <div className='customer-wrapper'
       style={{
         backgroundColor: '#ee4d2d'
       }}
@@ -69,9 +70,9 @@ const Index = () => {
                   ) : (
                     <svg width='40' height='40' fill='none' className='Gcv8A_'>
                       <g clip-path='url(#clip0)'>
-                        <rect x='1.5' y='1.5' width='37' height='28' rx='2.5' stroke='#EE4D2D' strokeWidth='3'></rect>
-                        <path stroke='#EE4D2D' strokeWidth='3' d='M22 38.5h11'></path>
-                        <path stroke='#EE4D2D' strokeWidth='10' d='M21 29v9'></path>
+                        <rect x='1.5' y='1.5' width='37' height='28' rx='2.5' stroke='#EE4D2D' stroke-width='3'></rect>
+                        <path stroke='#EE4D2D' stroke-width='3' d='M22 38.5h11'></path>
+                        <path stroke='#EE4D2D' stroke-width='10' d='M21 29v9'></path>
                         <path fill='#fff' d='M-12.28 0l43.933 43.933-22.72 22.72L-35 22.72z'></path>
                         <path
                           d='M10.997 16.545l-2.76-.782.519-1.591 2.733 1.098-.176-3.067h1.723l-.176 3.129 2.663-1.081.519 1.608-2.813.783 1.846 2.338-1.397.993-1.6-2.567-1.582 2.479-1.397-.95 1.898-2.39zm8.156 0l-2.76-.782.52-1.591 2.732 1.098-.175-3.067h1.722l-.175 3.129 2.663-1.081.518 1.608-2.812.783 1.845 2.338-1.397.993-1.6-2.567-1.582 2.479-1.397-.95 1.898-2.39zm8.157 0l-2.76-.782.518-1.591 2.734 1.098-.176-3.067h1.723l-.176 3.129 2.663-1.081.519 1.608-2.813.783 1.846 2.338-1.398.993-1.6-2.567-1.581 2.479-1.398-.95 1.899-2.39z'
@@ -147,7 +148,7 @@ const Index = () => {
 
           <div className='signup'>
             <span>Bạn mới biết đến Shopee? </span>
-            <a href=''>Đăng ký</a>
+            <Link to='/register'>Đăng ký</Link>
           </div>
         </Flex>
       </Flex>
