@@ -1,3 +1,20 @@
+.ant-steps-item-container {
+    text-align: center;
+
+    .ant-steps-item-content{
+        display: block;
+
+        .ant-steps-item-title{
+            padding-inline-end: 0;
+
+            &:after {
+                top: -16px;
+                left: 90%;
+            }
+        }
+    }
+}
+
 .register-container {
     .ant-divider{
         margin-top: 30px!important;
@@ -17,4 +34,172 @@
         }
     }
 
+}
+
+.confirm-register {
+    margin-top: 50px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .btn-next {
+        width: 100%;
+        background-color: #ee4d2d;
+        color: white;
+        text-transform: uppercase;
+        padding: 15px 10px;
+        height: auto !important;
+        border-width: 0;
+        border-radius: 3px !important;
+        margin-top: 30px !important;
+
+        &:hover {
+            background-color: #da4628;
+            color: white !important;
+        }
+    }
+
+    .btn-prev {
+        position: absolute;
+        top: 50px;
+        left: 30px;
+        width: auto;
+        padding: 0;
+        margin: 0;
+        border-width: 0;
+        background-color: transparent;
+        box-shadow: none;
+        
+        .icon-arrow {
+            fill: #ee4d2d;
+            height: 1.5rem;
+            padding-top: 0.25rem;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            width: 1.5rem;
+        }
+    }
+}
+
+.method-list {
+    li {
+        .btn-change-method {
+            border: 1px solid rgba(0,0,0,.09);
+            border-radius: 2px;
+            font-size: 1rem;
+            height: 64px;
+            line-height: 1.5rem;
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: initial; 
+
+            .icon {
+                display: inline-block;
+                vertical-align: middle;
+                width: 40px;
+                margin: 0 12px;
+            }
+        }
+    }
+}
+
+.confirm-phone-number {
+    .other-method-subtitle {
+        color: rgba(0,0,0,.09);
+        font-size: 14px;
+        max-width: 330px;
+        margin: 0 auto 20px;
+        
+    }
+    
+    .phone-number {
+        font-weight: 500;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+}
+
+.confirm-password {
+    .subtitle {
+        font-size: 18px;
+        max-width: 400px;
+        margin: 0 auto;
+        color: rgba(0, 0, 0, 0.8)
+    }
+
+    .password {
+        position: relative;
+        margin-top: 30px;
+        margin-bottom: 20px;
+
+        input {
+            padding: 10px;
+            border-radius: 0;
+            border-color: rgba(0, 0, 0, 0.7);
+
+            &:focus,
+            &:hover{
+                outline: none;
+                box-shadow: none;
+                border-color: #ee4d2d;
+            }
+        }
+        
+        .btn-show {
+            position: absolute;
+            top: 13px;
+            right: 10px;
+            cursor: pointer;
+        }
+    }
+
+    .rules{
+        text-align: initial;
+        color: rgba(0, 0, 0, 0.3);
+        font-size: 15px;
+        margin-bottom: 20px;
+        max-width: 350px;
+
+        li {
+            margin-bottom: 10px;
+        }
+    }
+
+}
+
+.confirm-success {
+    font-size: 17px;
+    font-weight: 400;
+
+    .confirm-heading {
+        margin-bottom: 20px;
+    }
+
+    .subtitle {
+        max-width: 350px;
+        margin: 30px auto 0;
+
+        .phone-number{
+            color: #ee4d2d;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+    }
+
+    .btn-home {
+        display: block;
+        background-color: #ee4d2d;
+        color: white;
+        padding: 15px 10px;
+        margin-top: 50px;
+
+        &:hover {
+            background-color: #da4628;
+        }
+    }
 }

@@ -1,7 +1,7 @@
 import { Flex } from 'antd';
 import { Divider } from 'antd';
 
-import '../../assets/Footer/footer.scss';
+import '../../assets/styles/Footer/footer.scss';
 
 import QuickLinks from '../../components/Footer/quickLinks';
 import QuickLinksImage from '../../components/Footer/quickLinksImage';
@@ -11,35 +11,35 @@ import CopyRight from './copyRight';
 import PolicyLinks from './PolicyLinks'
 import InformationCompany from './informationCompany';
 
-import Visa from '../../../public/payment/visa.png';
-import MasterCard from '../../../public/payment/mastercard.png';
-import JCB from '../../../public/payment/jcb.png';
-import ShopeePay from '../../../public/payment/shopeepay.png';
-import SPayLater from '../../../public/payment/spaylater.png';
-import TG0 from '../../../public/payment/TG0.png';
-import COD from '../../../public/payment/cod.png';
-import American from '../../../public/payment/american.png';
+import Visa from '../../../public/images/payment/visa.png';
+import MasterCard from '../../../public/images/payment/mastercard.png';
+import JCB from '../../../public/images/payment/jcb.png';
+import ShopeePay from '../../../public/images/payment/shopeepay.png';
+import SPayLater from '../../../public/images/payment/spaylater.png';
+import TG0 from '../../../public/images/payment/TG0.png';
+import COD from '../../../public/images/payment/cod.png';
+import American from '../../../public/images/payment/american.png';
 
-import GHN from '../../../public/shipping/ghn.png';
-import GHTK from '../../../public/shipping/ghtk.png';
-import SXP from '../../../public/shipping/sxp.png';
-import VTPost from '../../../public/shipping/vtp.png';
-import VNPost from '../../../public/shipping/VNPost.png';
-import Grab from '../../../public/shipping/Grab.png';
-import JT from '../../../public/shipping/J&T.png';
-import Aha from '../../../public/shipping/aha.png';
-import Be from '../../../public/shipping/be.png';
-import Best from '../../../public/shipping/best.png';
-import Ninjavan from '../../../public/shipping/ninjavan.png';
+import GHN from '../../../public/images/shipping/ghn.png';
+import GHTK from '../../../public/images/shipping/ghtk.png';
+import SXP from '../../../public/images/shipping/sxp.png';
+import VTPost from '../../../public/images/shipping/vtp.png';
+import VNPost from '../../../public/images/shipping/VNPost.png';
+import Grab from '../../../public/images/shipping/Grab.png';
+import JT from '../../../public/images/shipping/J&T.png';
+import Aha from '../../../public/images/shipping/aha.png';
+import Be from '../../../public/images/shipping/be.png';
+import Best from '../../../public/images/shipping/best.png';
+import Ninjavan from '../../../public/images/shipping/ninjavan.png';
 
-import Facebook from '../../../public/socials/facebook.png';
-import Instagram from '../../../public/socials/instagrma.png';
-import LinkedIn from '../../../public/socials/linkedin.png';
+import Facebook from '../../../public/images/socials/facebook.png';
+import Instagram from '../../../public/images/socials/instagrma.png';
+import LinkedIn from '../../../public/images/socials/linkedin.png';
 
-import QRCode from '../../../public/app-dowload/qr-app.png';
-import AppStore from '../../../public/app-dowload/app-store.png';
-import GGPlay from '../../../public/app-dowload/google-play.png';
-import Gallery from '../../../public/app-dowload/app-gallery.png';
+import QRCode from '../../../public/images/app-dowload/qr-app.png';
+import AppStore from '../../../public/images/app-dowload/app-store.png';
+import GGPlay from '../../../public/images/app-dowload/google-play.png';
+import Gallery from '../../../public/images/app-dowload/app-gallery.png';
 
 const dataCustomerCare = [
     {
