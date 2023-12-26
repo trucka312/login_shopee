@@ -1,3 +1,9 @@
+$color-primary: #ee4d2d;
+
+.customer-wrapper{
+    background-color: $color-primary;
+}
+
 .login-container {
     // color: #fff;
     // background-image: url("../images/wallpaper.png");
@@ -221,5 +227,11 @@
             margin: 5px 0px 0;
             text-align: center;
         }
+    }
+}
+
+footer {
+    @include mq_max_768 {
+        display: none !important;
     }
 }

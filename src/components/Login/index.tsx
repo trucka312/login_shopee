@@ -23,7 +23,7 @@ const Index = () => {
     console.log('Failed:', errorInfo)
   }
   return (
-    <div
+    <div className='customer-wrapper'
       style={{
         backgroundColor: '#ee4d2d'
       }}
