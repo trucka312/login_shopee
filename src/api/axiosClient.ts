@@ -2,8 +2,10 @@ import axios, { InternalAxiosRequestConfig } from 'axios'
 import { tokenDecode } from '../utils/token'
 import { jwtDecode } from 'jwt-decode'
 import { userApi } from './userApi'
+import cookie from 'cookiejs'
 
-const access_token = localStorage.getItem('access_token')
+// const access_token = localStorage.getItem('access_token')
+const access_token = cookie.get('access_token')
 const axiosClient = axios.create({
   baseURL: 'http://localhost:8888',
   headers: {
@@ -15,9 +17,13 @@ export const refreshToken = async (refresh_token: string) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const response: any = await userApi.refreshTokenApi(refresh_token)
     console.log('response ref', response)
-    // Lưu trữ token mới và refresh token mới vào localStorage
-    localStorage.setItem('access_token', response.access_token)
-    localStorage.setItem('refresh_token', response.refresh_token)
+    // Lưu trữ token mới và refresh token mới vào cookie
+    // localStorage.setItem('access_token', response.access_token)
+    // localStorage.setItem('refresh_token', response.refresh_token)
+    cookie.set({
+      access_token: response.access_token,
+      refresh_token: response.refresh_token
+    })
 
     return response.access_token
   } catch (error) {
@@ -30,8 +36,8 @@ axiosClient.interceptors.request.use(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   async function (config: InternalAxiosRequestConfig<any>) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const access_token = localStorage.getItem('access_token') === null ? 'null' : localStorage.getItem('access_token')
-
+    // const access_token = localStorage.getItem('access_token') === null ? 'null' : localStorage.getItem('access_token')
+    const access_token = cookie.get('access_token')
     if (access_token && access_token !== 'undefined' && access_token !== 'null') {
       config.headers.Authorization = `Bearer ${access_token}`
     }
@@ -57,9 +63,10 @@ axiosClient.interceptors.response.use(
     const originalRequest = error.config
     if ((error.response.status === 401 || error.response.status === 422) && !originalRequest._retry) {
       originalRequest._retry = true
-      const refreshTokenOld = localStorage.getItem('refresh_token') || 'null'
-      const accessTokenOld = localStorage.getItem('access_token') || 'null'
-
+      //   const refreshTokenOld = localStorage.getItem('refresh_token') || 'null'
+      //   const accessTokenOld = localStorage.getItem('access_token') || 'null'
+      const refreshTokenOld = cookie.get('refresh_token') as string
+      const accessTokenOld = cookie.get('access_token') as string
       const decodedToken = jwtDecode(accessTokenOld) as tokenDecode
       if (decodedToken.exp * 1000 < new Date().getTime()) {
         try {
